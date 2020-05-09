@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CountryStatCell" rowHeight="124" id="oJD-Lv-pZn" customClass="CountryStatCell" customModule="Covid19Stats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oJD-Lv-pZn" id="7ar-GZ-Aci">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="საქართველო" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFO-5A-D2Q">
+                        <rect key="frame" x="20" y="11" width="374" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="unt-IH-9tp">
+                        <rect key="frame" x="20" y="43" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="unt-IH-9tp" secondAttribute="height" multiplier="1:1" id="Nbv-q6-LpI"/>
+                            <constraint firstAttribute="height" constant="64" id="utk-a3-y95"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ინფიცირებულები: 4566" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fey-6O-yem">
+                        <rect key="frame" x="92" y="43" width="302" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="გამოჯანმრთელებულები: 444" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuZ-kE-vVC">
+                        <rect key="frame" x="92" y="67" width="302" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="გარდაცვლილები: 45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHG-kZ-Nup">
+                        <rect key="frame" x="92" y="91" width="302" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cFO-5A-D2Q" firstAttribute="top" secondItem="7ar-GZ-Aci" secondAttribute="topMargin" id="0RA-V2-4WH"/>
+                    <constraint firstItem="IuZ-kE-vVC" firstAttribute="top" secondItem="fey-6O-yem" secondAttribute="bottom" constant="8" id="2DO-ff-Vy4"/>
+                    <constraint firstItem="IuZ-kE-vVC" firstAttribute="trailing" secondItem="fey-6O-yem" secondAttribute="trailing" id="6uC-9s-Jrs"/>
+                    <constraint firstItem="JHG-kZ-Nup" firstAttribute="trailing" secondItem="fey-6O-yem" secondAttribute="trailing" id="Ekq-yz-MLT"/>
+                    <constraint firstItem="unt-IH-9tp" firstAttribute="leading" secondItem="7ar-GZ-Aci" secondAttribute="leading" constant="20" id="Kr6-Hn-51k"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cFO-5A-D2Q" secondAttribute="trailing" id="Tf9-6w-c4C"/>
+                    <constraint firstItem="JHG-kZ-Nup" firstAttribute="leading" secondItem="fey-6O-yem" secondAttribute="leading" id="Xqk-jw-rZ4"/>
+                    <constraint firstItem="IuZ-kE-vVC" firstAttribute="leading" secondItem="fey-6O-yem" secondAttribute="leading" id="a5y-eJ-3db"/>
+                    <constraint firstItem="unt-IH-9tp" firstAttribute="top" secondItem="cFO-5A-D2Q" secondAttribute="bottom" constant="8" id="iHH-vE-l2x"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fey-6O-yem" secondAttribute="trailing" id="kUP-Oo-QZY"/>
+                    <constraint firstItem="cFO-5A-D2Q" firstAttribute="leading" secondItem="7ar-GZ-Aci" secondAttribute="leadingMargin" id="l5z-QB-095"/>
+                    <constraint firstItem="JHG-kZ-Nup" firstAttribute="top" secondItem="IuZ-kE-vVC" secondAttribute="bottom" constant="8" id="ra7-FK-8XH"/>
+                    <constraint firstItem="fey-6O-yem" firstAttribute="leading" secondItem="unt-IH-9tp" secondAttribute="trailing" constant="8" id="reQ-LB-MyW"/>
+                    <constraint firstItem="fey-6O-yem" firstAttribute="top" secondItem="unt-IH-9tp" secondAttribute="top" id="vwQ-fR-lKF"/>
+                    <constraint firstAttribute="bottom" secondItem="unt-IH-9tp" secondAttribute="bottom" constant="17" id="xfU-TN-Htn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="confirmedLabel" destination="fey-6O-yem" id="utQ-pq-t3D"/>
+                <outlet property="countryFlagImageView" destination="unt-IH-9tp" id="mXk-qn-wKz"/>
+                <outlet property="countryNameLabel" destination="cFO-5A-D2Q" id="4cT-Hp-mbd"/>
+                <outlet property="deathsLabel" destination="JHG-kZ-Nup" id="FSq-Ah-RIW"/>
+                <outlet property="recoveredLabel" destination="IuZ-kE-vVC" id="ltz-OX-fbq"/>
+            </connections>
+            <point key="canvasLocation" x="40.579710144927539" y="37.907608695652179"/>
+        </tableViewCell>
+    </objects>
+</document>
