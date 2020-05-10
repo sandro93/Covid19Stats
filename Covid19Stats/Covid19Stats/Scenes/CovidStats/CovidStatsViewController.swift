@@ -15,10 +15,6 @@ class CovidStatsViewController: UIViewController, CovidStatsView {
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action:
-                     #selector(handleRefresh(_:)),
-                                 for: UIControl.Event.valueChanged)
-        //refreshControl.tintColor = UIColor.red
         
         return refreshControl
     }()
@@ -42,7 +38,7 @@ class CovidStatsViewController: UIViewController, CovidStatsView {
         self.tableView.addSubview(self.refreshControl)
     }
     
-    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.refreshControl.endRefreshing()
         self.startLoading()
         self.presenter?.refresh()
@@ -58,11 +54,14 @@ class CovidStatsViewController: UIViewController, CovidStatsView {
         self.tableView.reloadData()
     }
     
-    func displayDataFetchError(title: String, message: String) {
-        self.present(UIAlertController(title: title, message: message, preferredStyle: .alert), animated: true, completion: nil)
+    func displayDataFetchError(title: String, message: String)
+    {
         self.stopLoading()
-        self.refreshControl.endRefreshing()
+        
+        let alertController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+        
+        self.tableView.reloadData()
     }
-    
-    
 }

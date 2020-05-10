@@ -9,19 +9,27 @@
 import UIKit
 
 enum NetworkError: Error {
-    case InternetConnectionOffline
+    case internetConnectionOffline
+}
 
-    var localizedDescription: String { return "Internet connection lost!" }
+extension NetworkError: LocalizedError {
+    
+    public var errorDescription: String? {
+        switch self {
+        case .internetConnectionOffline:
+            return "Internet connection lost!"
+        }
+    }
 }
 
 @available(iOS 11.0, *)
 enum AssetsColor {
-   case indicatorColor
+    case indicatorColor
 }
 
 @available(iOS 11.0, *)
 extension UIColor {
-
+    
     static func appColor(_ name: AssetsColor) -> UIColor? {
         switch name {
         case .indicatorColor:
@@ -29,3 +37,4 @@ extension UIColor {
         }
     }
 }
+

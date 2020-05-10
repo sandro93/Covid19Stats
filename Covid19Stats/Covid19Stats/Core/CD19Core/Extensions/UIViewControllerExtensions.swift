@@ -15,10 +15,9 @@ extension UIViewController
         self.view.isUserInteractionEnabled = false
         self.view.alpha = 0.95
         let loader = AppDelegate.shared.loadingView
-        loader.center = self.view.center //(AppDelegate.shared.window?.center)!
+        loader.center = self.view.center
         self.view.addSubview(loader)
         self.view.bringSubviewToFront(loader)
-        //loader.startAnimating()
     }
     
     func stopLoading()
@@ -62,6 +61,5 @@ extension UIViewController
     public class func loadFromStoryboard() -> Self
     {
         return self.load(from: self.className.replacingOccurrences(of: "NavigationController", with: "").replacingOccurrences(of: "ViewController", with: "").replacingOccurrences(of: "Controller", with: ""))!
-//        return self.load(from: self.className.replacingOccurrences(of: "ViewController", with: "").replacingOccurrences(of: "Controller", with: ""))!
     }
 }

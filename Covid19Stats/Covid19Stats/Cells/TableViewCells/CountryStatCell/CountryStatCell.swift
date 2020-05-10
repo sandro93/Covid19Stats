@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class CountryStatCell: UITableViewCell {
     
     @IBOutlet weak var countryNameLabel: UILabel!
@@ -15,6 +14,8 @@ class CountryStatCell: UITableViewCell {
     @IBOutlet weak var recoveredLabel: UILabel!
     @IBOutlet weak var confirmedLabel: UILabel!
     @IBOutlet weak var countryFlagImageView: UIImageView!
+    
+    private var flagPlaceholderImage: UIImage? { get { return UIImage(named: "icon_flag_placeholder") } }
     
     override func fill(with item: Any)
     {
@@ -24,10 +25,9 @@ class CountryStatCell: UITableViewCell {
             self.recoveredLabel.text = "Recovered: \(data.recovered ?? 0)"
             self.deathsLabel.text = "Deaths: \(data.deaths ?? 0)"
             self.confirmedLabel.text = "Confirmed: \(data.confirmed ?? 0)"
-            self.countryFlagImageView.image = data.flagImage
-            self.countryFlagImageView.downloaded(from: APPURL.CountrFlagsUrl
+            self.countryFlagImageView.setImage(from: APPURL.CountrFlagsUrl
                 .replacingOccurrences(of: "{code}", with: data.code ?? "")
-                .replacingOccurrences(of: "{size}", with: "64"))
+                .replacingOccurrences(of: "{size}", with: "64"), placeholder: self.flagPlaceholderImage)
         }
     }
 }

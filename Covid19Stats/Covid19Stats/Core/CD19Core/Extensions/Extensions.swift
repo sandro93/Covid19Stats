@@ -16,7 +16,7 @@ public extension Int {
 }
 
 public extension String {
-   
+    
     var toInt : Int { get { let number = NSDecimalNumber(string: self); return number == NSDecimalNumber.notANumber ? 0 : number.intValue } }
     
 }
@@ -62,22 +62,17 @@ extension UIView {
 
 extension UIImageView {
     
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() {
-                self.image = image
+    func setImage(from urlString: String, placeholder: UIImage? = nil) {
+        guard let url = URL(string: urlString) else { return }
+        image = placeholder
+        
+        ImageCache.shared.imageFor(url: url) { [weak self] (result, error) in
+            
+            if let result = result {
+                DispatchQueue.main.async() {
+                    self?.image = result
+                }
             }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
+        }
     }
 }

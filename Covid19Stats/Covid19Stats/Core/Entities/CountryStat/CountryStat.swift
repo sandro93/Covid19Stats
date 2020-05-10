@@ -14,7 +14,6 @@ struct CountryStat {
     var confirmed: Int?
     var deaths: Int?
     var recovered: Int?
-    var flagImage: UIImage?
 }
 
 extension CountryStat: Equatable {}

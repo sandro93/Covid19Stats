@@ -39,14 +39,18 @@ class CacheCountryStatGateWayImplementation: CountryStatsGateWay {
                 }
             }
         } else {
-            
+            if forceDownload ?? false {
+                completionHandler(.failure(NetworkError.internetConnectionOffline))
+                return
+            }
+                
             self.localPersistantCountryStatsGateWay.fetchCountryStats(forceDownload: nil) { (result) in
                 switch result {
                 case let .success(countryStats):
                     completionHandler(.success(countryStats))
                     
                 case .failure(_):
-                    completionHandler(.failure(NetworkError.InternetConnectionOffline))
+                    completionHandler(.failure(NetworkError.internetConnectionOffline))
                     
                 }
             }

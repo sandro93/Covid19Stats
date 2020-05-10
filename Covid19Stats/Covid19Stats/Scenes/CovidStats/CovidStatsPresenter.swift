@@ -12,10 +12,6 @@ protocol CovidStatsPresenter {
     func viewDidLoad ()
     func configure(cell:CountryStatCell,row:Int)
     func refresh()
-    //func didSelect(for row: Int)
-//    func pushToLogin()
-//    func pushToProviders()
-//    func pushFromCollectionView(id:String, storyBoardId:String)
     var numberOfItems: Int { get }
 }
 
@@ -23,7 +19,6 @@ protocol CovidStatsView: class {
     func refreshTableView()
     func displayData()
     func displayDataFetchError(title: String, message: String)
-    //func pushToVC (with product:Product)
 }
 
 class CovidStatsPresenterImplementation: CovidStatsPresenter {
@@ -64,13 +59,13 @@ class CovidStatsPresenterImplementation: CovidStatsPresenter {
     }
     
     private func fetchData(forceDownload: Bool) {
-         self.displayCountryStatsUseCase?.fetchCountryStats(forceDownload: forceDownload, completionHandler: { [weak self] (result) in
-             switch result {
-             case let .success(countryStats):
-                 self?.handleFetchedData(countryStats)
-             case let .failure(error):
-                 self?.handleDataFetchError(error)
-             }
-         })
+        self.displayCountryStatsUseCase?.fetchCountryStats(forceDownload: forceDownload, completionHandler: { [weak self] (result) in
+            switch result {
+            case let .success(countryStats):
+                self?.handleFetchedData(countryStats)
+            case let .failure(error):
+                self?.handleDataFetchError(error)
+            }
+        })
     }
 }

@@ -13,7 +13,7 @@ protocol CovidStatsConfigurator {
 class CovidStatsConfiguratorImplementation : CovidStatsConfigurator {
     
     func configure(covidStatsViewController : CovidStatsViewController) {
-       
+        
         let apiClient = ApiClientImplementation.init(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
         let apiCountryStatsGateWay = ApiCountryStatsGateWayImplementation.init(apiClient: apiClient)
         

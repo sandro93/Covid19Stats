@@ -47,6 +47,7 @@
 		CC50224E2466B94800FFE92F /* CDNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50224D2466B94800FFE92F /* CDNavigationController.swift */; };
 		CC5022502466C28700FFE92F /* Default.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC50224F2466C28700FFE92F /* Default.storyboard */; };
 		CC5022532466E09C00FFE92F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5022522466E09C00FFE92F /* Utils.swift */; };
+		CCEF0D94246856CB0031E041 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF0D93246856CB0031E041 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		CC50224D2466B94800FFE92F /* CDNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNavigationController.swift; sourceTree = "<group>"; };
 		CC50224F2466C28700FFE92F /* Default.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Default.storyboard; sourceTree = "<group>"; };
 		CC5022522466E09C00FFE92F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CCEF0D93246856CB0031E041 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +175,6 @@
 		CC1B7A4724642C5700A4214E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				CC3315C624658F3E00228BEF /* Managers */,
 				CC1B7A6724646F1F00A4214E /* CD19Core */,
 				CC1B7A4E2464369600A4214E /* Result */,
 				CC1B7A5124643DB300A4214E /* Entities */,
@@ -412,18 +413,12 @@
 			path = CountryStat;
 			sourceTree = "<group>";
 		};
-		CC3315C624658F3E00228BEF /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		CC3315C72465BD1000228BEF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				CC3315CC2465BD9300228BEF /* DeviceInfo */,
 				CC5022522466E09C00FFE92F /* Utils.swift */,
+				CCEF0D93246856CB0031E041 /* ImageCache.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -568,6 +563,7 @@
 				CC3315B1246564A700228BEF /* ApiCountryStatsRequest.swift in Sources */,
 				CC1B7A71246481D200A4214E /* NSManagedObjectContext-Utils.swift in Sources */,
 				CC3315C324656DF900228BEF /* CacheCountryStatGateWay.swift in Sources */,
+				CCEF0D94246856CB0031E041 /* ImageCache.swift in Sources */,
 				CC3315DB2465D4C100228BEF /* LoadingView.swift in Sources */,
 				CC1B7A6424646C2A00A4214E /* CoreDataCountryStat + CoreDataProperties.swift in Sources */,
 				CC3315C92465BD3B00228BEF /* Reachability.swift in Sources */,
