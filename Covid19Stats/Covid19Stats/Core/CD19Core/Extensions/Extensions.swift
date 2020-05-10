@@ -64,13 +64,18 @@ extension UIImageView {
     
     func setImage(from urlString: String, placeholder: UIImage? = nil) {
         guard let url = URL(string: urlString) else { return }
-        image = placeholder
         
         ImageCache.shared.imageFor(url: url) { [weak self] (result, error) in
             
             if let result = result {
                 DispatchQueue.main.async() {
                     self?.image = result
+                }
+            }
+            
+            if error != nil {
+                DispatchQueue.main.async() {
+                    self?.image = placeholder
                 }
             }
         }
